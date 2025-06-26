@@ -27,7 +27,7 @@ cd inventory-management
 pip install -r requirements.txt
 ```
 
-3. Настройте окружение:
+3. Настройте окружение (создайте файл .env и внесите в него строки):
 ```bash
 PORT=8000
 JWT_SECRET=gfdnjgfgdkslkge
