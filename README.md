@@ -204,7 +204,7 @@ python client.py
 ```
 .
 ├── schema/
-│   └── schema.graphql                # SDL схема
+│   └── schema.graphql                # GraphQL схема
 ├── server/
 │   ├── server.py                     # точка входа сервера
 │   ├── resolvers.py                  # резолверы GraphQL
