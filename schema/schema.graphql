@@ -1,0 +1,50 @@
+scalar DateTime
+
+type Product {
+  id: ID!
+  name: String!
+  quantity: Int!
+}
+
+type StockChange {
+  id: ID!
+  productId: ID!
+  delta: Int!
+  timestamp: DateTime!
+}
+
+type StockAlert {
+  productId: ID!
+  productName: String!
+  currentQuantity: Int!
+  message: String!
+  timestamp: DateTime!
+}
+
+input AddProductInput {
+  name: String!
+  quantity: Int!
+}
+
+type LoginResult {
+  token: String!
+  userRole: String!
+}
+
+type Query {
+  getProduct(id: ID!): Product
+  listProducts(limit: Int, offset: Int): [Product!]!
+  getStockChanges: [StockChange!]!
+  protectedResource: String!
+}
+
+type Mutation {
+  addProduct(input: AddProductInput!): Product!
+  updateStock(productId: ID!, delta: Int!): Product!
+  removeProduct(id: ID!): Boolean!
+  login(username: String!, password: String!): LoginResult!
+}
+
+type Subscription {
+  streamStockAlerts(threshold: Int!): StockAlert!
+}

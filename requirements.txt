@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+strawberry-graphql
+python-dotenv
+requests
+websockets
+pyjwt
